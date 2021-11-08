@@ -6,6 +6,8 @@ const inputLogin = document.getElementById('login');
 const inputPassword = document.getElementById('password');
 const buttonOut = document.querySelector('.button-out'); 
 const userName = document.querySelector('.user-name');
+const buttonCart = document.querySelector('.button-cart');
+
 const login = (user) =>{
 
     let str = ' ';
@@ -14,6 +16,8 @@ const login = (user) =>{
 
         buttonOut.style.display = 'flex';
         userName.style.display = 'flex';
+        buttonCart.style.display = 'flex';
+
 
 
         userName.textContent = user.login;
@@ -28,6 +32,7 @@ const logout = (user) =>{
 
     buttonOut.style.display = 'none';
     userName.style.display = 'none';
+    buttonCart.style.display = 'none';
 
     userName.textContent = '';
 
