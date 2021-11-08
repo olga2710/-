@@ -1,13 +1,17 @@
+let totalPrice =0;
+const modalCart = document.querySelector('.modal-cart');
+const modalPricetag = modalCart.querySelector('.modal-pricetag');
+
 const card = () =>{
 
     const buttonCart = document.getElementById('cart-button');
-    const modalCart = document.querySelector('.modal-cart');
+    
     const btnClose = modalCart.querySelector('.close');
     const clearCart = modalCart.querySelector('.clear-cart');
-    const modalPricetag = modalCart.querySelector('.modal-pricetag');
+    
     const modalBody = document.querySelector('.modal-body');
     const buttonPrimary = modalCart.querySelector('.button-primary');
-    let totalPrice =0;
+    
 
     const clearModal = () =>{
         const foodRow = modalCart.querySelectorAll('.food-row');
@@ -16,10 +20,11 @@ const card = () =>{
         });
         totalPrice = 0;
         modalPricetag.textContent = '0 ₽';
+        const Array=[];
 
-        localStorage.removeItem('card');
 
         modalCart.classList.remove('is-open');
+        localStorage.removeItem('card');
 
         
 
@@ -38,6 +43,7 @@ const card = () =>{
         })
 
         localStorage.setItem('card', JSON.stringify(cardArray));
+        
         
         renderItems(JSON.parse(localStorage.getItem('card')));
 

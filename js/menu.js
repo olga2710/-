@@ -70,7 +70,15 @@ const menu = () =>{
             `;
 
             card.querySelector('.button-add-cart').addEventListener('click', () =>{
-                addToCard({name, price, id, count: 1});
+                if (!JSON.parse(localStorage.getItem('card'))){
+                    cardArray=[];
+                    addToCard({name, price, id, count: 1});
+                    console.log ('успех')
+                } else  {
+                    
+                    addToCard({name, price, id, count: 1});
+                }
+                    
             })
     
             cardsMenu.append(card);
